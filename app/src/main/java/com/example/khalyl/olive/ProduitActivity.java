@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
 
+import com.example.khalyl.olive.utils.Utility;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -14,21 +16,29 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import java.util.ArrayList;
+
 /**
- * Created by selim on 5/1/2017.
+ * Created by selim on 5/17/2017.
  */
 
-public class ProfileActivity  extends AppCompatActivity {
+public class ProduitActivity extends AppCompatActivity {
     private Drawer drawer;
     private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile_activity);
+        setContentView(R.layout.produit);
         mToolbar = (Toolbar) findViewById(R.id.tool);
         setSupportActionBar(mToolbar); // Set action
         setupDrawerNavigation(savedInstanceState);
-        drawer.setSelection(2);
+        ArrayList<ProductData> products = Utility.getProducts(this);
+        ProductAdapter productAdapter =
+                new ProductAdapter(this, products);
+
+        ListView lv = (ListView) findViewById(R.id.productListView);
+        lv.setAdapter(productAdapter);
+
     }
     public void setupDrawerNavigation(@Nullable Bundle savedInstanceState) {
         new DrawerBuilder().withActivity(this).build();
@@ -62,17 +72,22 @@ public class ProfileActivity  extends AppCompatActivity {
                             int id = (int) drawerItem.getIdentifier();
                             switch (id) {
                                 case 1:
-                                    intent = new Intent(ProfileActivity.this, ProduitActivity.class);
-                                    startActivity(intent);
+                                    drawer.closeDrawer();
                                     return true;
                                 case 2:
-                                    return true;
+                                    intent = new Intent(ProduitActivity.this, ProfileActivity.class);
+                                    startActivity(intent);
+                                    break;
                                 case 3:
 
                                     break;
                                 case 4:
+                                    intent = new Intent(ProduitActivity.this, ContactActivity.class);
+                                    startActivity(intent);
                                     break;
                                 case 5:
+                                    intent = new Intent(ProduitActivity.this, CompanyActivity.class);
+                                    startActivity(intent);
                                     break;
                                 case 6:
                                     break;

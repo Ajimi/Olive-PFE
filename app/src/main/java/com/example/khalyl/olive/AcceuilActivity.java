@@ -21,7 +21,7 @@ public class AcceuilActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.whatListView);
         listView.setAdapter(itemsAdapter);
 
-        ArrayList<ProductData> products = Utility.getProducts(3);
+        ArrayList<ProductData> products = Utility.getProducts(this);
         ProductAdapter productAdapter =
                 new ProductAdapter(this, products);
 

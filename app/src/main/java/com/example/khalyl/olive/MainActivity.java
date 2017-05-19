@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             setSupportActionBar(mToolbar); // Set action
         setupDrawerNavigation(savedInstanceState);
         setupRecyclerView();
-
     }
 
     private void setupRecyclerView() {

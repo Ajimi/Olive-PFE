@@ -14,10 +14,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Themee">
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/Themee" />
+        <activity
+            android:name=".ProduitActivity"
+            android:theme="@style/Themee">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignActivity"
             android:theme="@style/AppTheme.Dark">
@@ -46,11 +58,7 @@
             android:label="Contacte"
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".AcceuilActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

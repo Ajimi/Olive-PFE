@@ -8,6 +8,7 @@ public class ProductData {
     private int mImage;
     String name;
     String price;
+    String mContext;
 
     public ProductData(int mImage, String name, String price) {
         this.mImage = mImage;
