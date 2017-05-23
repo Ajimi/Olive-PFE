@@ -82,11 +82,11 @@ public class ProduitActivity extends AppCompatActivity {
 
                                     break;
                                 case 4:
-                                    intent = new Intent(ProduitActivity.this, ContactActivity.class);
+                                    intent = new Intent(ProduitActivity.this, SettingsActivity.class);
+                                    startActivity(intent);
                                     startActivity(intent);
                                     break;
                                 case 5:
-                                    intent = new Intent(ProduitActivity.this, CompanyActivity.class);
                                     startActivity(intent);
                                     break;
                                 case 6:

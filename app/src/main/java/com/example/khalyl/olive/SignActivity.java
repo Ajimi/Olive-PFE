@@ -18,7 +18,7 @@ public class SignActivity extends AppCompatActivity {
         findViewById(R.id.btn_signup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignActivity.this, MainActivity.class);
+                Intent intent = new Intent(SignActivity.this, ProduitActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();

@@ -71,6 +71,8 @@ public class ProfileActivity  extends AppCompatActivity {
 
                                     break;
                                 case 4:
+                                    intent = new Intent(ProfileActivity.this, SettingsActivity.class);
+                                    startActivity(intent);
                                     break;
                                 case 5:
                                     break;
